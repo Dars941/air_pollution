@@ -19,13 +19,57 @@ class PostDetails extends StatelessWidget {
             Map<String, dynamic> data =
                 snapshot.data!.data() as Map<String, dynamic>;
             return ListTile(
-              title: Text('tittle : ${data['tittle']}'),
-              subtitle: Column(
+              title: Column(
+
                 children: [
-                  Text('description : ${data['description']}'),
-                  Text('location : ${data['location']}'),
+                  Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Row(
+                        children: [
+
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text('tittle : ${data['tittle']}',style: TextStyle(fontWeight: FontWeight.bold),),
+                              SizedBox(height: 10),
+                              Text('location : ${data['location']}',style: TextStyle(fontWeight: FontWeight.bold),),
+                              SizedBox(height: 20),
+                            ],
+                          ),
+                        ],
+                      ),
+                      Container(
+
+                        height: 400,
+
+                        decoration: BoxDecoration(image: DecorationImage(
+                          image: AssetImage('assets/images/bground.jpg'),
+                          fit: BoxFit.cover,
+                        ),),
+                      ),
+
+                      Padding(padding: EdgeInsets.only(left: 16),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+
+                          children: [
+                          Text('description : ${data['description']}',style: TextStyle(fontWeight: FontWeight.bold),),
+                          SizedBox(height: 10),
+
+
+
+
+
+                        ],),
+                      ),
+
+
+                    ],
+                  )
                 ],
               ),
+
               tileColor: Colors.purple,
             );
           }

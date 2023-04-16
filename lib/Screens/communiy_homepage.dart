@@ -66,8 +66,8 @@ class _CommunityHomePageState extends State<CommunityHomePage> {
                       return Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: ListTile(
-                          leading: const CircleAvatar(child: Text("A")),
-                          tileColor: Colors.purple[300],
+                        //  leading: const CircleAvatar(child: Text("A")),
+                          //tileColor: Colors.purple[300],
                           title: PostDetails(
                             userId: postsDetails[index],
                           ),
@@ -88,7 +88,7 @@ class _CommunityHomePageState extends State<CommunityHomePage> {
             onPressed: () {
               Navigator.of(context).push(
                 MaterialPageRoute(
-                  builder: (ctx) => (const AddPost()),
+                  builder: (ctx) => ( AddPost()),
                 ),
               );
             },
