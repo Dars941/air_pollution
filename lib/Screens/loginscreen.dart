@@ -2,6 +2,7 @@ import 'package:air_pollution/Screens/admin_screen.dart';
 import 'package:air_pollution/Screens/users.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import '../Components/TextField/text_field.dart';
+import 'ForgetPasswordScreen.dart';
 import 'Package:flutter/material.dart';
 import 'sign_up_screen.dart';
 
@@ -228,8 +229,11 @@ class _LoginScreenState extends State<LoginScreen> {
                                   )),
                               TextButton(
                                   onPressed: () {
-                                    resetPassword(
-                                        email: emailIdController.text.trim());
+                                    Navigator.of(context).push(
+                                      MaterialPageRoute(
+                                        builder: (ctx) => ForgetPassword(),
+                                      ),
+                                    );
                                   },
                                   child: const Text(
                                     "forget Password",
